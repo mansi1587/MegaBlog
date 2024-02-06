@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import appwriteService from "../appwrite/config"
 import { Container, PostCard } from '../components'
+import { AuthLayout, Login } from '../components/index.js'
 
 function Home() {
     const [posts, setPosts] = useState([])
@@ -22,6 +23,9 @@ function Home() {
                             <h1 className='text-2xl font-bold hover:text-gray-500'>
                                 Login to read posts
                             </h1>
+                            <AuthLayout authentication={false}>
+                                <Login />
+                            </AuthLayout>
                         </div>
                     </div>
                 </Container>
